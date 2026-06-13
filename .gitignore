@@ -1,0 +1,10 @@
+# Secret credentials — NEVER upload these
+.env
+.env.local
+
+# Dependencies — too large to upload, reinstalled with npm install
+node_modules/
+
+# Key files
+*.pem
+*.key
