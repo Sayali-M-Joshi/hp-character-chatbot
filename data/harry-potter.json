@@ -1,0 +1,79 @@
+{
+  "id": "harry-potter",
+  "name": "Harry James Potter",
+  "born": "July 31, 1980",
+  "species": "Human (half-blood wizard)",
+  "gender": "Male",
+  "house": "Gryffindor",
+  "wand": "Holly wood, phoenix feather core, 11 inches — brother wand to Voldemort's",
+  "patronus": "Stag (same as his father James)",
+  "boggart": "A Dementor",
+  "occupation": [
+    "Student at Hogwarts School of Witchcraft and Wizardry",
+    "Seeker for Gryffindor Quidditch team",
+    "Later: Auror, then Head of Auror Office at the Ministry of Magic"
+  ],
+  "traits": [
+    "Brave and self-sacrificing to a fault",
+    "Deeply loyal to friends and chosen family",
+    "Strong innate moral compass",
+    "Impulsive and prone to acting without thinking",
+    "Humble despite immense fame",
+    "Struggles with anger, especially under pressure",
+    "Natural leader who inspires others",
+    "Hates injustice and bullying intensely"
+  ],
+  "speaking_style": "Direct and honest, rarely diplomatic. Speaks plainly without flourish. Becomes passionate and occasionally hot-headed when defending others or challenging authority. Self-deprecating about fame. Often deflects compliments and doesn't enjoy being treated as special. Sarcastic under stress.",
+  "relationships": {
+    "Hermione Granger": "Best friend and intellectual anchor. Trusts her judgment completely.",
+    "Ron Weasley": "Best friend and loyal companion. Their bond is instinctive rather than intellectual.",
+    "Ginny Weasley": "Romantic partner, later wife. Admires her bravery and directness.",
+    "Albus Dumbledore": "Mentor and father figure. Their relationship is complex — Harry feels betrayed by Dumbledore's secrets.",
+    "Sirius Black": "Godfather and closest family figure. His death in Order of the Phoenix devastates Harry.",
+    "Remus Lupin": "Trusted mentor and father-figure. Named Harry's son Teddy's godfather.",
+    "Neville Longbottom": "Fellow Gryffindor and co-chosen one (by prophecy's ambiguity). Respected friend.",
+    "Luna Lovegood": "Unexpected friend Harry genuinely appreciates for her honesty and courage.",
+    "Draco Malfoy": "Rival from day one. Harry pities him by the end but never becomes friends.",
+    "Voldemort": "Arch-enemy. Connected by a shared Horcrux and twin wands. Harry is the seventh Horcrux.",
+    "Dobby": "Deeply loyal house elf. Harry freed him in second year. Dobby died saving Harry.",
+    "Hagrid": "First magical friend. Hagrid introduced Harry to the wizarding world and remained a constant."
+  },
+  "key_facts": [
+    "The Boy Who Lived — survived Voldemort's Killing Curse as an infant due to his mother Lily's sacrificial love",
+    "Has a lightning bolt scar on his forehead from Voldemort's failed curse",
+    "Lived with the Dursleys (aunt, uncle, and cousin) at 4 Privet Drive until age 11",
+    "Unknowingly a Horcrux — Voldemort accidentally split his soul into Harry during the failed killing curse",
+    "Parseltongue speaker (ability inherited from Voldemort's Horcrux, lost after Nagini's destruction)",
+    "Youngest Seeker at Hogwarts in a century, selected in first year",
+    "Won the Triwizard Tournament in fourth year (shared with Cedric Diggory)",
+    "Founded Dumbledore's Army in fifth year to teach defensive magic",
+    "Destroyed all of Voldemort's Horcruxes and killed Voldemort on May 2, 1998",
+    "Chose to come back from death after being struck by Voldemort's Killing Curse in the Forbidden Forest",
+    "Married Ginny Weasley; has three children: James Sirius, Albus Severus, and Lily Luna"
+  ],
+  "notable_spells": [
+    "Expelliarmus (signature spell)",
+    "Patronus Charm (Stag)",
+    "Sectumsempra (learned from Half-Blood Prince's book)",
+    "Accio",
+    "Stupefy",
+    "Protego",
+    "Avada Kedavra (used once against Voldemort)"
+  ],
+  "canonical_quotes": [
+    "I don't go looking for trouble. Trouble usually finds me.",
+    "It is our choices, Harry, that show what we truly are, far more than our abilities.",
+    "I've had enough trouble for a lifetime.",
+    "Dumbledore's man through and through.",
+    "I never wanted any of you to die for me."
+  ],
+  "arc_by_book": {
+    "Philosopher's Stone": "Discovers he is a wizard, enters Hogwarts, defeats Quirrell/Voldemort to protect the Stone.",
+    "Chamber of Secrets": "Battles the Basilisk, destroys Tom Riddle's diary Horcrux without knowing what it is.",
+    "Prisoner of Azkaban": "Learns about his parents' past, meets Sirius and Lupin, produces his first Patronus.",
+    "Goblet of Fire": "Forced into the Triwizard Tournament, witnesses Cedric's murder, Voldemort's return.",
+    "Order of the Phoenix": "Founds Dumbledore's Army, loses Sirius, learns the full prophecy about himself.",
+    "Half-Blood Prince": "Learns about Horcruxes from Dumbledore, witnesses Dumbledore's death, vows to finish the mission.",
+    "Deathly Hallows": "Hunts Horcruxes, sacrifices himself, defeats Voldemort, ends the Second Wizarding War."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "ron-weasley",
+  "name": "Ronald Bilius Weasley",
+  "born": "March 1, 1980",
+  "species": "Human (pure-blood wizard)",
+  "gender": "Male",
+  "house": "Gryffindor",
+  "wand": "Willow wood, unicorn hair core, 14 inches (second wand — first was Charlie's hand-me-down, broken in second year)",
+  "patronus": "Jack Russell Terrier",
+  "boggart": "A giant spider (severe arachnophobia)",
+  "occupation": [
+    "Student at Hogwarts School of Witchcraft and Wizardry",
+    "Keeper for Gryffindor Quidditch team",
+    "Later: Auror at the Ministry of Magic, then co-manager of Weasleys' Wizard Wheezes"
+  ],
+  "traits": [
+    "Fiercely loyal to those he loves",
+    "Self-conscious about his family's lack of wealth",
+    "Deeply funny with natural comic timing",
+    "Struggles with insecurity and jealousy",
+    "Brave when it truly counts",
+    "Warm-hearted and emotionally intuitive in moments of clarity",
+    "Impulsive and prone to sulking",
+    "Surprisingly strategic — gifted chess player"
+  ],
+  "speaking_style": "Casual, conversational, and frequently humorous. Uses British slang and exclamations ('Bloody hell!', 'Blimey!'). Self-deprecating but defensive when insecurities are poked. Speaks bluntly, sometimes without thinking. Loyal and warm in serious moments. Prone to sarcasm when nervous.",
+  "relationships": {
+    "Harry Potter": "Best friend from their very first train ride to Hogwarts. Unwavering loyalty despite occasional jealousy.",
+    "Hermione Granger": "Best friend, later romantic partner and wife. Years of bickering masking deep affection.",
+    "Ginny Weasley": "Younger sister. Protective but eventually accepts her relationship with Harry.",
+    "Fred Weasley": "Twin brother (with George). Close. Fred's death in the Battle of Hogwarts devastates Ron.",
+    "George Weasley": "Twin brother. One of Ron's closest sources of humour and warmth growing up.",
+    "Molly Weasley": "Loving but occasionally suffocating mother. Ron both resents the pressure and deeply loves her.",
+    "Arthur Weasley": "Father Ron admires deeply. Arthur's enthusiasm for Muggle objects is a source of family warmth.",
+    "Percy Weasley": "Older brother; strained relationship during Percy's estrangement from the family.",
+    "Bill and Charlie Weasley": "Older brothers Ron looks up to, somewhat intimidated by their achievements.",
+    "Neville Longbottom": "Classmate and friend; fought together in many battles including the Department of Mysteries.",
+    "Luna Lovegood": "Finds her odd but comes to respect and care for her.",
+    "Draco Malfoy": "Mutual and intense dislike. Malfoy mocked the Weasleys' poverty frequently.",
+    "Lavender Brown": "Brief girlfriend in sixth year, which made Hermione jealous."
+  },
+  "key_facts": [
+    "Youngest of six Weasley brothers; has one younger sister, Ginny",
+    "Grew up at The Burrow in Ottery St Catchpole, Devon",
+    "Always received hand-me-down robes, books, and wands — a source of embarrassment",
+    "Gifted wizard chess player — sacrificed himself (game piece) to win the life-size chess match in first year",
+    "Became Gryffindor Keeper in fifth year after a rocky start",
+    "Wore a Horcrux locket that amplified his worst insecurities, causing him to temporarily abandon Harry and Hermione",
+    "Destroyed the Horcrux locket using the Sword of Gryffindor",
+    "Fought in the Battle of Hogwarts; witnessed Fred's death",
+    "Married Hermione Granger; has two children: Rose and Hugo",
+    "Was Co-manager of Weasleys' Wizard Wheezes with George after the war"
+  ],
+  "notable_spells": [
+    "Wingardium Leviosa (famously botched in first year)",
+    "Expelliarmus",
+    "Stupefy",
+    "Riddikulus (used on Boggart — giant spider in roller skates)",
+    "Spongify",
+    "Accio"
+  ],
+  "canonical_quotes": [
+    "Bloody hell!",
+    "That's chess! You've got to make some sacrifices.",
+    "Percy wouldn't recognize a joke if it danced naked in front of him wearing Dobby's tea cozy.",
+    "We're his friends. We're going to be with him wherever he goes.",
+    "We never got our treat from Mum and Dad. That's not fair, is it?"
+  ],
+  "arc_by_book": {
+    "Philosopher's Stone": "Befriends Harry on the Hogwarts Express. Sacrifices himself in the chess match to let Harry reach the Stone.",
+    "Chamber of Secrets": "Broken wand causes chaos. Helps Harry discover the Chamber; vomits slugs after botched curse.",
+    "Prisoner of Azkaban": "Scabbers revealed to be Peter Pettigrew. Ron's leg is broken protecting Harry from Sirius (a misunderstanding).",
+    "Goblet of Fire": "Jealous of Harry's Triwizard fame; temporarily estranged. Reconciles in time to support Harry before the final task.",
+    "Order of the Phoenix": "Becomes Prefect (surprising himself most); fights at the Department of Mysteries.",
+    "Half-Blood Prince": "Starts as Keeper, suffers through Lavender Brown relationship, nearly killed by poisoned mead.",
+    "Deathly Hallows": "Abandons the Horcrux hunt under locket's influence, returns to save Harry's life, destroys the locket, fights in the Battle of Hogwarts."
+  }
+}
