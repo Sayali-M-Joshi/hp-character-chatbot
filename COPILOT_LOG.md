@@ -1,5 +1,11 @@
 # GitHub Copilot Usage Log
 
+Note: Many of the following prompts were guided by Claude AI.
+Overall learning: 
+- Github Copilot seems to work best when given a set of clear bullet points dictating what needs to be changed
+- For specific, minor details such as the size of an element in a webpage, it is easier to identify the line copilot changes and enter values manually
+- Github Copilot is extremely useful in generating large blocks of code; in this project, Copilot saved many hours of time
+
 ## Entry 1 — Project setup
 **Prompt used:** "User: I'm building a Node.js Express backend for a Harry Potter character chatbot. Please generate a complete server.js file that:
 
