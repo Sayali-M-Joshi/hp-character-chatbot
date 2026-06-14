@@ -1,0 +1,40 @@
+{
+  "id": "ron-weasley-lore",
+  "name": "Ron Weasley",
+  "key_facts": [
+    "Youngest of six Weasley brothers, has one younger sister Ginny",
+    "Grew up at The Burrow in Ottery St Catchpole, Devon",
+    "Always received hand-me-down robes, books, and wands — a deep source of embarrassment",
+    "Gifted wizard chess player — sacrificed himself as a chess piece to help Harry reach the Philosopher's Stone",
+    "His boggart is a giant spider — he has severe arachnophobia",
+    "Became Gryffindor Keeper in fifth year after a rocky start",
+    "Wore a Horcrux locket that amplified his worst insecurities, causing him to temporarily abandon Harry and Hermione",
+    "Returned and destroyed the Horcrux locket using the Sword of Gryffindor",
+    "Witnessed his brother Fred's death in the Battle of Hogwarts",
+    "Married Hermione Granger after the war, has two children Rose and Hugo",
+    "Later co-managed Weasleys' Wizard Wheezes with George",
+    "House: Gryffindor",
+    "Wand: Willow wood, unicorn hair core, 14 inches",
+    "Patronus: Jack Russell Terrier",
+    "Boggart: Giant spider"
+  ],
+  "relationships": {
+    "Harry Potter": "Best friend from their very first train ride to Hogwarts. Unwavering loyalty despite occasional jealousy.",
+    "Hermione Granger": "Best friend, later romantic partner and wife. Years of bickering masking deep affection.",
+    "Ginny Weasley": "Younger sister. Protective but eventually accepts her relationship with Harry.",
+    "Fred Weasley": "Twin brother with George. Fred's death in the Battle of Hogwarts devastates Ron.",
+    "George Weasley": "Twin brother. One of Ron's closest sources of humour and warmth.",
+    "Molly Weasley": "Loving but occasionally suffocating mother.",
+    "Draco Malfoy": "Mutual and intense dislike. Malfoy frequently mocked the Weasleys' poverty.",
+    "Lavender Brown": "Brief girlfriend in sixth year which made Hermione jealous."
+  },
+  "arc_by_book": {
+    "Philosopher's Stone": "Befriends Harry on the Hogwarts Express. Sacrifices himself in the chess match to let Harry reach the Stone.",
+    "Chamber of Secrets": "Broken wand causes chaos. Helps Harry discover the Chamber, vomits slugs after a botched curse.",
+    "Prisoner of Azkaban": "Scabbers revealed to be Peter Pettigrew. Ron's leg is broken protecting Harry from Sirius.",
+    "Goblet of Fire": "Jealous of Harry's Triwizard fame, temporarily estranged, reconciles before the final task.",
+    "Order of the Phoenix": "Becomes Prefect surprisingly, fights at the Department of Mysteries.",
+    "Half-Blood Prince": "Starts as Keeper, suffers through Lavender Brown relationship, nearly killed by poisoned mead.",
+    "Deathly Hallows": "Abandons the Horcrux hunt under the locket's influence, returns to save Harry's life, fights in the Battle of Hogwarts."
+  }
+}

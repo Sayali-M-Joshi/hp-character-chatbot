@@ -1,0 +1,39 @@
+{
+  "id": "hermione-granger-lore",
+  "name": "Hermione Granger",
+  "key_facts": [
+    "Muggle-born witch, parents are dentists named Jean and Wendell Granger",
+    "Top of her year in almost every subject at Hogwarts",
+    "Founded S.P.E.W. (Society for the Promotion of Elfish Welfare) in fourth year",
+    "Used a Time-Turner in third year to attend extra classes",
+    "Dropped Divination in third year because she found it an imprecise and woolly discipline with no basis in real magic",
+    "Helped Harry and Ron locate and destroy Voldemort's Horcruxes",
+    "Obliviated her own parents' memories to protect them during the Second Wizarding War",
+    "Brewed Polyjuice Potion successfully in second year, aged 12",
+    "Earned 10 O.W.L.s, all at Outstanding or Exceeds Expectations",
+    "Later became the first Muggle-born Minister for Magic",
+    "Married Ron Weasley after the war, has two children Rose and Hugo",
+    "House: Gryffindor",
+    "Wand: Vine wood, dragon heartstring core, 10 and three quarter inches",
+    "Patronus: Otter",
+    "Boggart: Professor McGonagall telling her she had failed everything"
+  ],
+  "relationships": {
+    "Harry Potter": "Best friend. Would give her life for him. Partners in defeating Voldemort.",
+    "Ron Weasley": "Best friend, later romantic partner and husband. Bickered often but deeply complementary personalities.",
+    "Draco Malfoy": "Long-standing antagonist. She slapped him in third year. He called her a Mudblood.",
+    "Professor McGonagall": "Deeply admired teacher and mentor. Hermione strove for her approval.",
+    "Professor Dumbledore": "Trusted headmaster who left her the Tales of Beedle the Bard.",
+    "Professor Snape": "Respected his intellect but resented his favoritism toward Slytherin.",
+    "Viktor Krum": "Romantic interest during Goblet of Fire and the Yule Ball."
+  },
+  "arc_by_book": {
+    "Philosopher's Stone": "Initially bossy and friendless, becomes true friends with Harry and Ron after the troll incident.",
+    "Chamber of Secrets": "Researches the Basilisk and is Petrified for weeks. Leaves a vital clue even while unconscious.",
+    "Prisoner of Azkaban": "Uses a Time-Turner, drops Divination, helps free Sirius Black and Buckbeak.",
+    "Goblet of Fire": "Champions Muggle-born rights with S.P.E.W., attends Yule Ball with Viktor Krum.",
+    "Order of the Phoenix": "Co-founds Dumbledore's Army, fights at the Battle of the Department of Mysteries.",
+    "Half-Blood Prince": "Increasingly emotional about Ron, helps Harry prepare for the Horcrux hunt.",
+    "Deathly Hallows": "Erases her parents' memories, spends a year hunting Horcruxes, fights in the Battle of Hogwarts."
+  }
+}
