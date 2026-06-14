@@ -130,4 +130,43 @@ The JavaScript should:
 Keep everything in one file, no external dependencies.
 
 
-## Entry 4 - Expanding for 4 new characters
+## Entry 4 - Expanding the backend for 4 new characters
+**Prompt** In my server.js, update the getBlobSlug function to add four new characters to the name mapping:
+- "Draco Malfoy" -> "draco-malfoy"
+- "Neville Longbottom" -> "neville-longbottom"
+- "Ginny Weasley" -> "ginny-weasley"
+- "Luna Lovegood" -> "luna-lovegood"
+
+**Result** getBlobSlug function updated successfully
+
+## Entry 5 - Expanding the frontend for 4 new characters
+**Prompt** In my index.html Harry Potter chatbot, add four new characters to the characters array:
+- Draco Malfoy, emoji 🐍, subtitle "Cunning, cold, and more 
+  complicated than he seems."
+- Neville Longbottom, emoji 🌿, subtitle "Clumsy, brave, and 
+  braver than anyone expected."
+- Ginny Weasley, emoji 🔥, subtitle "Sharp, fearless, and nobody's sidekick."
+- Luna Lovegood, emoji 🌙, subtitle "Dreamy, wise, and wonderfully unbothered."
+
+Also update the character card grid so it shows all 7 cards nicely — maybe a responsive grid that wraps automatically.
+
+For Draco use a Slytherin green color #1a472a for his selected card. For Neville, Ginny and Luna keep Gryffindor red #740001. For Luna use Ravenclaw blue #0e1a40.
+
+**Result** 4 new character cards added, but not a great UI. The cards took up too much of the screen.
+
+## Entry 6 - Refining frontend
+**Prompt** Alter the card display so that the card grid takes up maximum 30% of vertical space in the screen. I want the cards to be more compact and the chat window to be the main focus of the application. The subtitles under each character can be removed or hidden.
+
+**Result** Made a bit smaller, but not sufficient.
+
+## Entry 7 - Refining frontend
+
+**Prompt** I want the character cards to be even smaller, and the chat window even larger. 
+
+Specifically:
+- the chat window should take up at least 70% of vertical space in the screen
+- the emojis for each character can be made smaller, and put beside the character name instead of on top
+- all 7 character cards should fit in one line side by side
+
+**Result** updated successfully!
+**What I changed** Manually went in and altered the vertical height of the character cards to fit my needs, increased the vertical size of the title
