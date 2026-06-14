@@ -1,6 +1,6 @@
 # the-hogwarts-wizarding-chat
 
-**Disclaimer**
+**Disclaimer:**
 This is solely a fan-based creation and has no affiliation with Warner Bros or J.K. Rowling. 
 
 This application was created using Foundry IQ, gpt-4o-mini via Github Models, Github Copilot, and VS Code. Throughout development, Claude AI was used to inform the process and refine copilot prompts. 
@@ -10,3 +10,15 @@ For info on copilot use, see COPILOT_LOG.md
 
 Architecture Diagram (created with Canva)
 ![alt text](<The Hogwarts Wizarding Chat - Architecture Diagram.png>)
+
+To run locally:
+1. Clone this repository
+2. Create a .env file in the root with the required credentials:
+   AZURE_SEARCH_ENDPOINT=
+   AZURE_SEARCH_INDEX=
+   AZURE_SEARCH_KEY=
+   GITHUB_TOKEN=
+4. cd backend (navigating to the backend folder)
+5. npm install (installing dependencies)
+6. npm run dev (starts the server)
+7. Open index.html in the browser
