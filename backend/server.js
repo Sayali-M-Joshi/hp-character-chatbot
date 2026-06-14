@@ -38,59 +38,101 @@ const openai = new OpenAI({
 app.use(cors());
 app.use(express.json());
 
-async function getLore(characterName, userMessage) {
-	const query = `${characterName} ${characterName} ${characterName} ${userMessage}`.trim();
-	const searchResults = await searchClient.search(query, { top: 1 });
 
-	for await (const result of searchResults.results) {
-		return result.document ?? result;
+function getBlobSlug(characterName, suffix) {
+	const normalizedName = characterName.trim().toLowerCase();
+
+	if (normalizedName === 'hermione granger') {
+		return `hermione-granger-${suffix}`;
 	}
 
-	return null;
+	if (normalizedName === 'harry potter') {
+		return `harry-potter-${suffix}`;
+	}
+
+	if (normalizedName === 'ron weasley') {
+		return `ron-weasley-${suffix}`;
+	}
+
+	return `${normalizedName.replace(/\s+/g, '-')}-${suffix}`;
 }
 
-function buildSystemPrompt(lore) {
-	const parsedLore = (() => {
-		if (!lore?.snippet) {
-			return {};
-		}
+function getBlobUrl(characterName, suffix) {
+	return `https://hphackathonstore.blob.core.windows.net/hp-characters/${getBlobSlug(characterName, suffix)}`;
+}
 
-		if (typeof lore.snippet === 'string') {
+async function getPersonality(characterName) {
+	try {
+		const blobUrl = `${getBlobUrl(characterName, 'personality')}.json`;
+		const searchResults = await searchClient.search(characterName, {
+			filter: `blob_url eq '${blobUrl}'`,
+			top: 1,
+		});
+
+		for await (const result of searchResults.results) {
+			const snippet = result.document?.snippet;
+
+			if (typeof snippet !== 'string') {
+				return null;
+			}
+
 			try {
-				return JSON.parse(lore.snippet);
+				return JSON.parse(snippet);
 			} catch {
-				return {};
+				return null;
 			}
 		}
 
-		if (typeof lore.snippet === 'object') {
-			return lore.snippet;
+		return null;
+	} catch {
+		return null;
+	}
+
+}
+
+async function getLore(characterName, userMessage) {
+	try {
+		const blobUrl = `${getBlobUrl(characterName, 'lore')}.json`;
+		const searchResults = await searchClient.search(userMessage, {
+			filter: `blob_url eq '${blobUrl}'`,
+			top: 1,
+		});
+
+		for await (const result of searchResults.results) {
+			const snippet = result.document?.snippet;
+			return typeof snippet === 'string' ? snippet : null;
 		}
 
-		return {};
-	})();
+		return null;
+	} catch {
+		return null;
+	}
+}
 
-	const characterName = lore?.name ?? parsedLore.name ?? lore?.characterName ?? 'the character';
-	const speakingStyle = parsedLore.speaking_style ?? 'Speak naturally and stay in character.';
-	const traits = Array.isArray(parsedLore.traits)
-		? parsedLore.traits.join(', ')
-		: parsedLore.traits ?? 'Unknown';
-	const canonicalQuotes = Array.isArray(parsedLore.canonical_quotes)
-		? parsedLore.canonical_quotes.join(' | ')
-		: parsedLore.canonical_quotes ?? 'None available';
-	const keyFacts = Array.isArray(parsedLore.key_facts)
-		? parsedLore.key_facts.join(' | ')
-		: parsedLore.key_facts ?? 'None available';
+function buildSystemPrompt(personality, loreSnippet) {
+	if (!personality) {
+		return '';
+	}
 
-	return [
-		`You are ${characterName} from the Harry Potter universe.`,
-		`Stay fully in character and answer as ${characterName}.`,
-		`Speaking style: ${speakingStyle}`,
+	const traits = Array.isArray(personality.traits) ? personality.traits.join(', ') : '';
+	const canonicalQuotes = Array.isArray(personality.canonical_quotes)
+		? personality.canonical_quotes.join(' | ')
+		: '';
+
+	const promptParts = [
+		`You are ${personality.name}.`,
+		`Speaking style: ${personality.speaking_style ?? 'Speak naturally and stay in character.'}`,
 		`Traits: ${traits}`,
 		`Canonical quotes: ${canonicalQuotes}`,
-		`Key facts: ${keyFacts}`,
-		'If the user asks something outside known lore, respond as the character would, without breaking character.',
-	].join('\n');
+	];
+
+	if (loreSnippet) {
+		promptParts.push(`Relevant lore for this question: ${loreSnippet}`);
+	}
+
+	promptParts.push('Answer as the character and do not break character.');
+
+	return promptParts.join('\n');
 }
 
 app.get('/health', (request, response) => {
@@ -105,10 +147,22 @@ app.post('/chat', async (request, response) => {
 			return response.status(400).json({ error: 'character and message are required' });
 		}
 
-		const lore = await getLore(character, message);
-        console.log("LORE RETURNED:", JSON.stringify(lore, null, 2)); // add this
-		const systemPrompt = buildSystemPrompt(lore);
-        console.log("SYSTEM PROMPT:", systemPrompt); // add this
+		const [personality, loreSnippet] = await Promise.all([
+			getPersonality(character),
+			getLore(character, message),
+		]);
+
+        console.log("PERSONALITY LOADED:", personality ? `✅ ${personality.name} - traits: ${personality.traits?.length}` : "❌ null");
+        console.log("LORE SNIPPET:", loreSnippet ? `✅ ${loreSnippet.slice(0, 100)}...` : "❌ null");
+
+
+		if (!personality) {
+			return response.status(404).json({ error: 'Personality not found' });
+		}
+
+		const systemPrompt = buildSystemPrompt(personality, loreSnippet);
+
+        console.log("SYSTEM PROMPT BUILT:", systemPrompt.slice(0, 200) + "...");
 
 		const completion = await openai.chat.completions.create({
 			model: 'gpt-4o-mini',
@@ -118,6 +172,7 @@ app.post('/chat', async (request, response) => {
 			],
 		});
 
+        
 		const reply = completion.choices?.[0]?.message?.content ?? '';
 
 		return response.json({ reply });
@@ -131,4 +186,4 @@ app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
 
-export { app, buildSystemPrompt, getLore };
+export { app, buildSystemPrompt, getLore, getPersonality };
