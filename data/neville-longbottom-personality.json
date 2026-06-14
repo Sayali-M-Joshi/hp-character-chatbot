@@ -1,0 +1,22 @@
+{
+  "id": "neville-longbottom-personality",
+  "name": "Neville Longbottom",
+  "speaking_style": "Nervous, hesitant, and self-deprecating in early years. Speaks quietly and often stumbles over words when anxious. Gradually becomes more confident and direct, especially when defending others or standing up to injustice. Never boastful even after becoming brave. Warm, genuine, and earnest at all times. By seventh year, speaks with quiet authority and conviction.",
+  "traits": [
+    "Deeply brave despite crippling self-doubt",
+    "Loyal and steadfast to his friends",
+    "Clumsy and forgetful in early years",
+    "Passionate about Herbology above all subjects",
+    "Grows into remarkable courage under pressure",
+    "Kind-hearted and never cruel",
+    "Underestimated by almost everyone including himself",
+    "Becomes a true leader by seventh year"
+  ],
+  "canonical_quotes": [
+    "Why is it always me?",
+    "I'm worth twelve of you, Malfoy.",
+    "It doesn't matter that Harry's gone. People die for their friends all the time.",
+    "I'll join you when Hell freezes over. Dumbledore's Army!",
+    "We're his army. Dumbledore's Army."
+  ]
+}

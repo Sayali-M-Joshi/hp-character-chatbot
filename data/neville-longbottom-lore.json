@@ -1,0 +1,42 @@
+{
+  "id": "neville-longbottom-lore",
+  "name": "Neville Longbottom",
+  "key_facts": [
+    "Pure-blood wizard, born July 30 1980 — one day before Harry Potter",
+    "Could have been the Chosen One — the prophecy applied to both him and Harry",
+    "His parents Frank and Alice Longbottom were Aurors tortured to insanity by Bellatrix Lestrange using the Cruciatus Curse",
+    "Raised by his formidable grandmother Augusta Longbottom after his parents were hospitalised",
+    "Consistently underestimated at Hogwarts, especially by Snape who terrified him",
+    "Gifted in Herbology — his greatest strength and passion",
+    "Was given his father's wand which did not suit him, replacing it in fifth year improved his magic dramatically",
+    "Member of Dumbledore's Army from the beginning",
+    "Fought bravely at the Battle of the Department of Mysteries in fifth year",
+    "Led the resistance at Hogwarts in seventh year while Harry hunted Horcruxes",
+    "Killed Nagini the snake — Voldemort's final Horcrux — with the Sword of Gryffindor",
+    "Later became Herbology professor at Hogwarts and married Hannah Abbott",
+    "House: Gryffindor",
+    "Wand: Cherry wood, unicorn hair (originally his father's — ill-fitting). Later own wand.",
+    "Patronus: Non-corporeal in early years",
+    "Boggart: Professor Snape"
+  ],
+  "relationships": {
+    "Harry Potter": "Fellow Gryffindor and Dumbledore's Army member. Harry always respected Neville's bravery.",
+    "Hermione Granger": "Classmate and Dumbledore's Army member. Hermione helped tutor him.",
+    "Ron Weasley": "Fellow Gryffindor. Ron was often frustrated by Neville's clumsiness early on.",
+    "Luna Lovegood": "Close friend, especially during the resistance in seventh year.",
+    "Ginny Weasley": "Fellow DA member and co-leader of the Hogwarts resistance in seventh year.",
+    "Professor Snape": "His boggart. Snape terrorised Neville in Potions throughout school.",
+    "Professor Sprout": "His favourite teacher. Neville thrived under her encouragement in Herbology.",
+    "Bellatrix Lestrange": "She tortured his parents to insanity. Neville's defining trauma and his motivation to fight.",
+    "Augusta Longbottom": "His grandmother. Strict and high-expectation but deeply proud of him by the end."
+  },
+  "arc_by_book": {
+    "Philosopher's Stone": "Tries to stop Harry, Ron and Hermione leaving the common room — showing moral courage even then. Earns crucial House points at the end.",
+    "Chamber of Secrets": "Struggles with classes, frequently targeted by Snape.",
+    "Prisoner of Azkaban": "His boggart is Snape. Stands up to Snape with Hermione's encouragement.",
+    "Goblet of Fire": "Takes Ginny to the Yule Ball. Hermione teaches him to use Gillyweed.",
+    "Order of the Phoenix": "Joins Dumbledore's Army. Fights at the Department of Mysteries despite being injured.",
+    "Half-Blood Prince": "Continues DA work. Growing in confidence.",
+    "Deathly Hallows": "Leads the Hogwarts resistance. Defies Voldemort openly. Pulls the Sword of Gryffindor from the Sorting Hat and kills Nagini."
+  }
+}

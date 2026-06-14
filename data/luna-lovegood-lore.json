@@ -1,0 +1,38 @@
+{
+  "id": "luna-lovegood-lore",
+  "name": "Luna Lovegood",
+  "key_facts": [
+    "Pure-blood witch, born February 13 1981",
+    "Only child of Xenophilius Lovegood, editor of The Quibbler",
+    "Her mother Pandora Lovegood died in a spell experiment when Luna was nine — Luna witnessed it",
+    "Sorted into Ravenclaw",
+    "Nicknamed Loony Lovegood by other students who mocked her beliefs",
+    "Believes in many magical creatures and phenomena dismissed by mainstream wizards, including Nargles, Wrackspurts, and Crumple-Horned Snorkacks",
+    "Wears radish earrings and a necklace of Butterbeer corks as protective talismans",
+    "Joined Dumbledore's Army in fourth year",
+    "Fought at the Battle of the Department of Mysteries in fifth year",
+    "Was kidnapped by Death Eaters in seventh year and held at Malfoy Manor as leverage over her father",
+    "Fought in the Battle of Hogwarts",
+    "Later became a famous Magizoologist and married Rolf Scamander, grandson of Newt Scamander",
+    "Has twin sons named Lorcan and Lysander",
+    "House: Ravenclaw",
+    "Wand: Unknown wood, unknown core",
+    "Patronus: Hare",
+    "Signature item: Spectrespecs for seeing Wrackspurts"
+  ],
+  "relationships": {
+    "Harry Potter": "Genuine friend who understood him in ways others didn't. Harry trusted her implicitly.",
+    "Hermione Granger": "Hermione was skeptical of Luna's beliefs but came to deeply respect her bravery.",
+    "Ron Weasley": "Ron found her odd but came to care for her genuinely.",
+    "Ginny Weasley": "One of Luna's closest friends. They were in the same year.",
+    "Neville Longbottom": "Close friend, especially during the Hogwarts resistance in seventh year.",
+    "Xenophilius Lovegood": "Her father, whom she loves deeply and forgives even when he betrayed the trio to Death Eaters out of desperation to save her.",
+    "Pandora Lovegood": "Her late mother, whose death Luna witnessed as a child. Luna can see Thestrals because of this.",
+    "Rolf Scamander": "Husband, met through shared passion for magical creatures."
+  },
+  "arc_by_book": {
+    "Order of the Phoenix": "First appears on the Hogwarts Express. Joins Dumbledore's Army. Fights at the Department of Mysteries. One of the first to publicly support Harry's claims about Voldemort's return via The Quibbler.",
+    "Half-Blood Prince": "Commentates a Quidditch match memorably. Attends Slughorn's party with Harry. Deepening friendship with the group.",
+    "Deathly Hallows": "Kidnapped and held at Malfoy Manor. Her father betrays the trio trying to save her. She is rescued. Fights in the Battle of Hogwarts. Gives Harry space to disappear by creating a distraction at his request."
+  }
+}

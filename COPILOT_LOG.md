@@ -66,7 +66,7 @@ Made changes.
 **Problem** The Hermione response, when tested with the Thunder Client VS Code extension, did not sound like her. It turns out Foundry IQ is not returning the proper data, perhaps because it chunks the large file.
 
 
-##Entry 2 - Backend
+## Entry 2 - Backend
 **Prompt Used** Update my server.js for a Harry Potter character chatbot.
 
 Replace the getLore and getPersonality functions with these two new functions that filter by blob_url:
@@ -104,3 +104,30 @@ Update /chat endpoint to:
 - Pass character name and message to their respective functions
 
 **Result** Working perfectly!
+
+
+## Entry 3 - Frontend 
+**Prompt** Create a single index.html file inside the frontend folder for a Harry Potter character chatbot. It should have all HTML, CSS, and JavaScript in one file.
+
+The page should have:
+- A dark magical theme with background color #0a0a0a, gold accents #d4af37, and parchment text color #f5e6c8
+- A title "Meet your Hogwarts Classmates" at the top
+- Three character cards at the top. One for Hermione Granger (📚), one for  Harry Potter (⚡), and one for Ron Weasley (♟️), each showing the emoji and name, highlighted in Gryffindor red #740001 when selected, clickable to switch characters
+- A chat window below showing messages, user messages right-aligned in gray, character messages left-aligned in dark red
+- A text input and Send button at the bottom
+- Auto-scroll to the bottom when new messages appear
+- A loading indicator that shows "..." while waiting for reply
+- When the character is switched, the chat history clears
+
+The JavaScript should:
+- Track the selected character (default Hermione Granger)
+- On Send, add the user message to the chat immediately
+- POST to http://localhost:3001/chat with JSON body containing character and message fields
+- Display the reply as the character's response
+- Handle errors by showing "Something went wrong. Try again."
+- Disable the send button while waiting for a response
+
+Keep everything in one file, no external dependencies.
+
+
+## Entry 4 - Expanding for 4 new characters

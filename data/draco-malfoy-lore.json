@@ -1,0 +1,40 @@
+{
+  "id": "draco-malfoy-lore",
+  "name": "Draco Malfoy",
+  "key_facts": [
+    "Pure-blood wizard, only child of Lucius and Narcissa Malfoy",
+    "Grew up in Malfoy Manor, one of the wealthiest wizarding families in Britain",
+    "Sorted into Slytherin on his first day, as expected by his family",
+    "Became a Slytherin Quidditch Seeker in second year, his father bought the whole team Nimbus 2001s",
+    "Long-standing rival of Harry Potter from their very first meeting at Hogwarts",
+    "Called Hermione Granger a Mudblood in second year, causing outrage",
+    "Was made a Death Eater by Voldemort in sixth year as punishment to his father",
+    "Tasked with assassinating Dumbledore in sixth year — ultimately could not do it",
+    "Was identified by Harry, Ron and Hermione in Malfoy Manor but denied recognising them to protect them",
+    "His mother Narcissa lied to Voldemort about Harry being dead, saving Harry's life",
+    "After the war, Draco married Astoria Greengrass and had a son named Scorpius",
+    "House: Slytherin",
+    "Wand: Hawthorn wood, unicorn hair core, 10 inches",
+    "Patronus: Unknown",
+    "Boggart: Voldemort expressing disappointment in him"
+  ],
+  "relationships": {
+    "Harry Potter": "Arch-rival from day one. Offered friendship on the Hogwarts Express and was rejected. Their rivalry defined much of his Hogwarts years.",
+    "Hermione Granger": "Deeply prejudiced against her as a Muggle-born. Called her Mudblood. She slapped him in third year.",
+    "Ron Weasley": "Contemptuous of the Weasleys' poverty. Called Ron a blood traitor repeatedly.",
+    "Lucius Malfoy": "Idolised his father and parroted his views. His father's fall from Voldemort's favour devastated him.",
+    "Narcissa Malfoy": "Deeply loves his mother. Her lie to Voldemort saved Harry's life and ultimately their family.",
+    "Vincent Crabbe and Gregory Goyle": "Loyal but dim followers throughout school. More bodyguards than true friends.",
+    "Severus Snape": "Trusted Snape as a mentor and godfather figure. Snape protected him in sixth year.",
+    "Voldemort": "Terrified of him. Being made a Death Eater was a punishment, not an honour."
+  },
+  "arc_by_book": {
+    "Philosopher's Stone": "Establishes rivalry with Harry, attempts friendship and is rejected on the train.",
+    "Chamber of Secrets": "Calls Hermione a Mudblood. His father gives Ginny the diary Horcrux.",
+    "Prisoner of Azkaban": "Gets Buckbeak sentenced to death. Provokes Hermione until she slaps him.",
+    "Goblet of Fire": "Turned into a ferret by Mad-Eye Moody. Mocks Harry during the Triwizard Tournament.",
+    "Order of the Phoenix": "Becomes a Prefect and Inquisitorial Squad member under Umbridge.",
+    "Half-Blood Prince": "Made a Death Eater. Tasked with killing Dumbledore. Visibly deteriorates under the pressure. Cannot go through with it.",
+    "Deathly Hallows": "Identifies but denies recognising the trio at Malfoy Manor. His mother saves Harry. Draco does not actively fight in the Battle of Hogwarts."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "ginny-weasley-lore",
+  "name": "Ginny Weasley",
+  "key_facts": [
+    "Youngest of seven Weasley children and the only girl, born August 11 1981",
+    "Grew up at The Burrow in Ottery St Catchpole",
+    "Had a crush on Harry Potter from a very young age before finding her own confidence",
+    "In first year, was manipulated by Tom Riddle's diary Horcrux into opening the Chamber of Secrets",
+    "Was possessed by Voldemort's memory through the diary without realising it",
+    "Was rescued from the Chamber of Secrets by Harry in second year",
+    "Became an excellent Quidditch player — played Chaser and later Seeker for Gryffindor",
+    "Dated Dean Thomas in sixth year before getting together with Harry",
+    "Member of Dumbledore's Army from fourth year",
+    "Co-led the Hogwarts resistance with Neville and Luna in seventh year",
+    "Fought in the Battle of Hogwarts",
+    "Married Harry Potter after the war, had three children: James Sirius, Albus Severus, and Lily Luna",
+    "Later became a professional Quidditch player for the Holyhead Harpies, then a Quidditch correspondent",
+    "House: Gryffindor",
+    "Wand: Unknown wood and core",
+    "Patronus: Horse",
+    "Signature spell: Bat-Bogey Hex"
+  ],
+  "relationships": {
+    "Harry Potter": "Romantic partner and later husband. Moved past her childhood crush to become his equal and partner.",
+    "Ron Weasley": "Older brother. He is protective but she refuses to be treated as fragile.",
+    "Hermione Granger": "Close friend and later sister-in-law. One of Ginny's closest confidantes.",
+    "Fred and George Weasley": "The siblings she is closest to in personality. Their boldness shaped her own.",
+    "Neville Longbottom": "Close friend and fellow DA member. Co-led the Hogwarts resistance with him.",
+    "Luna Lovegood": "Close friend, especially in sixth and seventh year.",
+    "Tom Riddle": "Possessed her through his diary Horcrux in first year. A defining and traumatic experience.",
+    "Molly Weasley": "Loving mother. Ginny is more independent than Molly sometimes likes.",
+    "Dean Thomas": "Boyfriend in sixth year before she and Harry got together."
+  },
+  "arc_by_book": {
+    "Philosopher's Stone": "Glimpsed on Platform 9 and three-quarters, starstruck by Harry.",
+    "Chamber of Secrets": "Central to the plot. Manipulated by Tom Riddle's diary, opens the Chamber, nearly dies, rescued by Harry.",
+    "Prisoner of Azkaban": "Begins to find her confidence. Goes to the Yule Ball the following year.",
+    "Goblet of Fire": "Attends the Yule Ball with Neville. Becoming more herself.",
+    "Order of the Phoenix": "Joins Dumbledore's Army. Fights at the Department of Mysteries. Proves herself completely.",
+    "Half-Blood Prince": "Gets together with Harry. Plays Quidditch for Gryffindor. Harry breaks up with her to protect her.",
+    "Deathly Hallows": "Co-leads Hogwarts resistance. Fights in the Battle of Hogwarts. Reunites with Harry."
+  }
+}

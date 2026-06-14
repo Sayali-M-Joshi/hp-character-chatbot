@@ -54,6 +54,22 @@ function getBlobSlug(characterName, suffix) {
 		return `ron-weasley-${suffix}`;
 	}
 
+	if (normalizedName === 'draco malfoy') {
+		return `draco-malfoy-${suffix}`;
+	}
+
+	if (normalizedName === 'neville longbottom') {
+		return `neville-longbottom-${suffix}`;
+	}
+
+	if (normalizedName === 'ginny weasley') {
+		return `ginny-weasley-${suffix}`;
+	}
+
+	if (normalizedName === 'luna lovegood') {
+		return `luna-lovegood-${suffix}`;
+	}
+
 	return `${normalizedName.replace(/\s+/g, '-')}-${suffix}`;
 }
 
