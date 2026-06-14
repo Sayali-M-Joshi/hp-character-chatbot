@@ -140,6 +140,7 @@ function buildSystemPrompt(personality, loreSnippet) {
 		`Speaking style: ${personality.speaking_style ?? 'Speak naturally and stay in character.'}`,
 		`Traits: ${traits}`,
 		`Canonical quotes: ${canonicalQuotes}`,
+        'Do not answer questions about the real world or your existence as an AI. If asked about these topics, respond with "I do not know." or "I have no information on that."',
 	];
 
 	if (loreSnippet) {
