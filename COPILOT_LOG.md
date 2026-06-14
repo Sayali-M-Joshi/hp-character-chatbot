@@ -15,59 +15,15 @@ searches the index with top:1 and returns the first result's document
 - Has a GET / health check endpoint
 - Handles errors with try/catch
 
+**Results:** Initial server.js file. Mostly functional, minor issues like the location of the .env file. Fixed those issues manually.
 
-**What Copilot generated:** GitHub Copilot: Optimized tool selectionI’m checking the current backend entrypoint and package metadata first so I can make the smallest correct ES module change and avoid guessing about the runtime setup.
+**Problem:** The Hermione response, when tested with the Thunder Client VS Code extension, did not sound like her speaking style. It turns out Foundry IQ was not returning the proper data, perhaps because it was chunking large JSON files and returning partial snippets that failed JSON.parse. Additionally, the query was not filtering the files via id; instead, it was sending the query and Foundry IQ was simply accessing the most likely file. As a result, data from Harry was returned instead of data from Hermione.
 
-Read [](file:///c%3A/Users/Sayali%20Joshi/Documents/hp_char_chatbot/hp-character-chatbot/backend/server.js)
-
-Read [](file:///c%3A/Users/Sayali%20Joshi/Documents/hp_char_chatbot/hp-character-chatbot/backend/package.json)
-
-Read memory
-
-The backend entrypoint is empty, and the package is still CommonJS, so I’m confirming whether anything else in the workspace depends on the chat API shape before I write the new module and flip the package type.
-
-Searched for regex `/chat|fetch\(|axios|character|message` (`hp-character-chatbot` · `frontend/**`), no results
-
-Read [](file:///c%3A/Users/Sayali%20Joshi/Documents/hp_char_chatbot/hp-character-chatbot/README.md)
-
-I have enough to write the backend now. I’m updating the entrypoint to ESM, wiring the Azure Search and GitHub Models clients, and aligning the package metadata so Node will actually load `import` syntax.
-
-Apply Patch
-
-The first patch was rejected for missing tool metadata, so I’m resending the same backend change with the required edit explanation and then I’ll validate the module syntax immediately after.
-
-Generating patch (140 lines) in [](file:///c%3A/Users/Sayali%20Joshi/Documents/hp_char_chatbot/hp-character-chatbot/backend/server.js), [](file:///c%3A/Users/Sayali%20Joshi/Documents/hp_char_chatbot/hp-character-chatbot/backend/package.json)
-
-
-```
-
-```
-
-```
-
-```
-The file is written. I’m doing a syntax check in the backend folder now so I can catch any module-level mistakes before I hand this over.
-
-Ran terminal command: Set-Location 'c:\Users\Sayali Joshi\Documents\hp_char_chatbot\hp-character-chatbot\backend'; node --check server.js
-
-The syntax check passed cleanly. I’m grabbing line numbers for the key changes so I can point you to the exact backend entrypoint and the package switch in the summary.
-
-Read [](file:///c%3A/Users/Sayali%20Joshi/Documents/hp_char_chatbot/hp-character-chatbot/backend/server.js)
-
-Read [](file:///c%3A/Users/Sayali%20Joshi/Documents/hp_char_chatbot/hp-character-chatbot/backend/package.json)
-
-Implemented the backend entrypoint in server.js as an ES module Express app with `dotenv`, CORS, Azure AI Search, and GitHub Models. It now includes `getLore(characterName, userMessage)`, `buildSystemPrompt(lore)`, `GET /health`, and `POST /chat`, with `try/catch` handling around the chat flow.
-
-I also switched package.json to `"type": "module"` so Node will load the new `import` syntax correctly. I validated the file with `node --check` in the backend folder, and it passed.
-
-Made changes.
-**How I used it:** Followed the structure as suggested
-**Changes I made** Changed minor things like the location of the .env file
-**Problem** The Hermione response, when tested with the Thunder Client VS Code extension, did not sound like her. It turns out Foundry IQ is not returning the proper data, perhaps because it chunks the large file.
+**What I changed:** To avoid choosing the wrong chunk, I split each character file into two; one for personality details and one for lore details. These individual files are small enough to return in one chunk. This ensured the correct data was retrieved. Additionally, I decided to filter using blob_url filter so that Foundry IQ retrieved data from the correct file.I uploaded the 6 new smaller files to Azure Blob Storage and re-ran the indexer.
 
 
 ## Entry 2 - Backend
-**Prompt Used** Update my server.js for a Harry Potter character chatbot.
+**Prompt:** Update my server.js for a Harry Potter character chatbot.
 
 Replace the getLore and getPersonality functions with these two new functions that filter by blob_url:
 
@@ -103,11 +59,11 @@ Update /chat endpoint to:
 - Pass both to buildSystemPrompt
 - Pass character name and message to their respective functions
 
-**Result** Working perfectly!
+**Result:** Working perfectly!
 
 
 ## Entry 3 - Frontend 
-**Prompt** Create a single index.html file inside the frontend folder for a Harry Potter character chatbot. It should have all HTML, CSS, and JavaScript in one file.
+**Prompt:** Create a single index.html file inside the frontend folder for a Harry Potter character chatbot. It should have all HTML, CSS, and JavaScript in one file.
 
 The page should have:
 - A dark magical theme with background color #0a0a0a, gold accents #d4af37, and parchment text color #f5e6c8
@@ -129,18 +85,21 @@ The JavaScript should:
 
 Keep everything in one file, no external dependencies.
 
+**Result:** Working perfectly!
+
+**Next step:** Wanted to add a few more characters...
 
 ## Entry 4 - Expanding the backend for 4 new characters
-**Prompt** In my server.js, update the getBlobSlug function to add four new characters to the name mapping:
+**Prompt:** In my server.js, update the getBlobSlug function to add four new characters to the name mapping:
 - "Draco Malfoy" -> "draco-malfoy"
 - "Neville Longbottom" -> "neville-longbottom"
 - "Ginny Weasley" -> "ginny-weasley"
 - "Luna Lovegood" -> "luna-lovegood"
 
-**Result** getBlobSlug function updated successfully
+**Result:** getBlobSlug function updated successfully
 
 ## Entry 5 - Expanding the frontend for 4 new characters
-**Prompt** In my index.html Harry Potter chatbot, add four new characters to the characters array:
+**Prompt:** In my index.html Harry Potter chatbot, add four new characters to the characters array:
 - Draco Malfoy, emoji 🐍, subtitle "Cunning, cold, and more 
   complicated than he seems."
 - Neville Longbottom, emoji 🌿, subtitle "Clumsy, brave, and 
@@ -152,21 +111,21 @@ Also update the character card grid so it shows all 7 cards nicely — maybe a r
 
 For Draco use a Slytherin green color #1a472a for his selected card. For Neville, Ginny and Luna keep Gryffindor red #740001. For Luna use Ravenclaw blue #0e1a40.
 
-**Result** 4 new character cards added, but not a great UI. The cards took up too much of the screen.
+**Result:** 4 new character cards added, but not a great UI. The cards took up too much of the screen.
 
 ## Entry 6 - Refining frontend
-**Prompt** Alter the card display so that the card grid takes up maximum 30% of vertical space in the screen. I want the cards to be more compact and the chat window to be the main focus of the application. The subtitles under each character can be removed or hidden.
+**Prompt:** Alter the card display so that the card grid takes up maximum 30% of vertical space in the screen. I want the cards to be more compact and the chat window to be the main focus of the application. The subtitles under each character can be removed or hidden.
 
-**Result** Made a bit smaller, but not sufficient.
+**Result:** Made a bit smaller, but not sufficient.
 
 ## Entry 7 - Refining frontend
 
-**Prompt** I want the character cards to be even smaller, and the chat window even larger. 
+**Prompt:** I want the character cards to be even smaller, and the chat window even larger. 
 
 Specifically:
 - the chat window should take up at least 70% of vertical space in the screen
 - the emojis for each character can be made smaller, and put beside the character name instead of on top
 - all 7 character cards should fit in one line side by side
 
-**Result** updated successfully!
-**What I changed** Manually went in and altered the vertical height of the character cards to fit my needs, increased the vertical size of the title
+**Result:** updated successfully!
+**What I changed:** Manually went in and altered the vertical height of the character cards to fit my needs, increased the vertical size of the title
