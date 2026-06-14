@@ -152,8 +152,8 @@ app.post('/chat', async (request, response) => {
 			getLore(character, message),
 		]);
 
-        console.log("PERSONALITY LOADED:", personality ? `✅ ${personality.name} - traits: ${personality.traits?.length}` : "❌ null");
-        console.log("LORE SNIPPET:", loreSnippet ? `✅ ${loreSnippet.slice(0, 100)}...` : "❌ null");
+        // console.log("PERSONALITY LOADED:", personality ? `✅ ${personality.name} - traits: ${personality.traits?.length}` : "❌ null");
+        //console.log("LORE SNIPPET:", loreSnippet ? `✅ ${loreSnippet.slice(0, 100)}...` : "❌ null");
 
 
 		if (!personality) {
@@ -162,7 +162,7 @@ app.post('/chat', async (request, response) => {
 
 		const systemPrompt = buildSystemPrompt(personality, loreSnippet);
 
-        console.log("SYSTEM PROMPT BUILT:", systemPrompt.slice(0, 200) + "...");
+        // console.log("SYSTEM PROMPT BUILT:", systemPrompt.slice(0, 200) + "...");
 
 		const completion = await openai.chat.completions.create({
 			model: 'gpt-4o-mini',

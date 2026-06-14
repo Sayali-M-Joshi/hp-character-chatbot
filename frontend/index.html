@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet your Hogwarts Classmates</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: rgba(28, 16, 16, 0.92);
+      --panel-2: rgba(44, 20, 20, 0.92);
+      --gold: #d4af37;
+      --parchment: #f5e6c8;
+      --gryffindor: #740001;
+      --user-gray: #6f6f6f;
+      --char-red: #4a0d0d;
+      --border: rgba(212, 175, 55, 0.25);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--parchment);
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.16), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(116, 0, 1, 0.2), transparent 30%),
+        linear-gradient(180deg, #101010 0%, var(--bg) 100%);
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+      opacity: 0.35;
+    }
+
+    .app {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      gap: 18px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 10px 0 0;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      text-shadow: 0 0 24px rgba(212, 175, 55, 0.18);
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      color: rgba(245, 230, 200, 0.7);
+      font-size: 0.98rem;
+    }
+
+    .characters {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .character-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(42, 22, 22, 0.92), rgba(18, 10, 10, 0.96));
+      color: var(--parchment);
+      box-shadow: var(--shadow);
+      padding: 18px 16px;
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .character-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -60px auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.14), transparent 70%);
+      pointer-events: none;
+    }
+
+    .character-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212, 175, 55, 0.55);
+    }
+
+    .character-card.selected {
+      background: linear-gradient(180deg, rgba(116, 0, 1, 0.96), rgba(59, 0, 0, 0.98));
+      border-color: rgba(245, 230, 200, 0.4);
+      box-shadow: 0 18px 60px rgba(116, 0, 1, 0.35);
+    }
+
+    .character-emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .character-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .character-subtitle {
+      margin-top: 6px;
+      color: rgba(245, 230, 200, 0.78);
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .chat-shell {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(18, 12, 12, 0.92), rgba(9, 9, 9, 0.96));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .chat-window {
+      flex: 1;
+      min-height: 0;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .chat-empty {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: rgba(245, 230, 200, 0.55);
+      text-align: center;
+      padding: 40px;
+      border: 1px dashed rgba(212, 175, 55, 0.18);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .message {
+      max-width: min(78%, 760px);
+      padding: 14px 16px;
+      border-radius: 18px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      animation: fadeUp 180ms ease;
+    }
+
+    .message.user {
+      align-self: flex-end;
+      background: linear-gradient(180deg, rgba(111, 111, 111, 0.96), rgba(74, 74, 74, 0.96));
+      color: #f1f1f1;
+      border-bottom-right-radius: 6px;
+    }
+
+    .message.character {
+      align-self: flex-start;
+      background: linear-gradient(180deg, rgba(74, 13, 13, 0.98), rgba(40, 7, 7, 0.98));
+      color: var(--parchment);
+      border-bottom-left-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.13);
+    }
+
+    .message.loading {
+      letter-spacing: 0.3em;
+      min-width: 56px;
+      text-align: center;
+    }
+
+    .composer {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      border-top: 1px solid rgba(212, 175, 55, 0.16);
+      background: rgba(0, 0, 0, 0.32);
+    }
+
+    .composer input {
+      flex: 1;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 14px;
+      background: rgba(18, 12, 12, 0.92);
+      color: var(--parchment);
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .composer input::placeholder {
+      color: rgba(245, 230, 200, 0.45);
+    }
+
+    .composer input:focus {
+      border-color: rgba(212, 175, 55, 0.8);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+    }
+
+    .composer button {
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #e3c15a, var(--gold));
+      color: #1d1203;
+      font: inherit;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 0 22px;
+      min-width: 104px;
+      cursor: pointer;
+      transition: transform 160ms ease, opacity 160ms ease, filter 160ms ease;
+      box-shadow: 0 10px 24px rgba(212, 175, 55, 0.18);
+    }
+
+    .composer button:hover:not(:disabled) {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .composer button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .status-line {
+      min-height: 22px;
+      color: rgba(245, 230, 200, 0.72);
+      padding: 0 4px;
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 860px) {
+      body {
+        overflow: auto;
+      }
+
+      .app {
+        height: auto;
+        min-height: 100%;
+        padding: 18px;
+      }
+
+      .characters {
+        grid-template-columns: 1fr;
+      }
+
+      .message {
+        max-width: 92%;
+      }
+
+      .composer {
+        flex-direction: column;
+      }
+
+      .composer button {
+        width: 100%;
+        height: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <h1>Meet your Hogwarts Classmates</h1>
+      <p>Choose a character, ask a question, and hear their reply in character.</p>
+    </header>
+
+    <section class="characters" id="characterCards" aria-label="Choose a character"></section>
+
+    <section class="chat-shell" aria-label="Chat area">
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-empty" id="emptyState">
+          Your conversation will appear here.
+        </div>
+        <div class="messages" id="messages" hidden></div>
+      </div>
+
+      <div class="status-line" id="statusLine"></div>
+
+      <form class="composer" id="chatForm">
+        <input id="messageInput" type="text" placeholder="Ask a question about Hogwarts..." autocomplete="off" />
+        <button id="sendButton" type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    const API_URL = 'http://localhost:3001/chat';
+
+    const characters = [
+      { name: 'Hermione Granger', emoji: '📚', subtitle: 'Bright, prepared, and relentless.' },
+      { name: 'Harry Potter', emoji: '⚡', subtitle: 'Brave, direct, and always in the middle of trouble.' },
+      { name: 'Ron Weasley', emoji: '♟️', subtitle: 'Loyal, funny, and often sharper than he looks.' },
+    ];
+
+    const state = {
+      selectedCharacter: 'Hermione Granger',
+      messages: [],
+      isWaiting: false,
+      loadingMessageId: null,
+    };
+
+    const characterCards = document.getElementById('characterCards');
+    const messagesEl = document.getElementById('messages');
+    const emptyStateEl = document.getElementById('emptyState');
+    const chatWindowEl = document.getElementById('chatWindow');
+    const chatForm = document.getElementById('chatForm');
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    const statusLine = document.getElementById('statusLine');
+
+    function renderCharacterCards() {
+      characterCards.innerHTML = characters.map((character) => `
+        <button class="character-card ${character.name === state.selectedCharacter ? 'selected' : ''}" data-character="${character.name}" type="button">
+          <span class="character-emoji">${character.emoji}</span>
+          <div class="character-name">${character.name}</div>
+          <div class="character-subtitle">${character.subtitle}</div>
+        </button>
+      `).join('');
+
+      characterCards.querySelectorAll('[data-character]').forEach((button) => {
+        button.addEventListener('click', () => switchCharacter(button.dataset.character));
+      });
+    }
+
+    function renderMessages() {
+      const hasMessages = state.messages.length > 0;
+      emptyStateEl.hidden = hasMessages;
+      messagesEl.hidden = !hasMessages;
+
+      if (!hasMessages) {
+        messagesEl.innerHTML = '';
+        return;
+      }
+
+      messagesEl.innerHTML = state.messages.map((message) => {
+        const className = `message ${message.role}${message.loading ? ' loading' : ''}`;
+        return `<div class="${className}" data-id="${message.id}">${escapeHtml(message.text)}</div>`;
+      }).join('');
+
+      scrollToBottom();
+    }
+
+    function scrollToBottom() {
+      requestAnimationFrame(() => {
+        chatWindowEl.scrollTop = chatWindowEl.scrollHeight;
+      });
+    }
+
+    function setWaiting(isWaiting) {
+      state.isWaiting = isWaiting;
+      sendButton.disabled = isWaiting;
+      messageInput.disabled = isWaiting;
+      statusLine.textContent = isWaiting ? 'Thinking...' : '';
+    }
+
+    function switchCharacter(characterName) {
+      if (state.selectedCharacter === characterName) {
+        return;
+      }
+
+      state.selectedCharacter = characterName;
+      state.messages = [];
+      state.loadingMessageId = null;
+      setWaiting(false);
+      renderCharacterCards();
+      renderMessages();
+      messageInput.value = '';
+      messageInput.focus();
+    }
+
+    function addMessage(role, text, options = {}) {
+      const message = {
+        id: crypto.randomUUID(),
+        role,
+        text,
+        loading: Boolean(options.loading),
+      };
+
+      state.messages.push(message);
+      renderMessages();
+      return message.id;
+    }
+
+    function updateMessage(id, text, extra = {}) {
+      const message = state.messages.find((item) => item.id === id);
+      if (!message) {
+        return;
+      }
+
+      message.text = text;
+      Object.assign(message, extra);
+      renderMessages();
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    async function sendMessage(messageText) {
+      const trimmedMessage = messageText.trim();
+      if (!trimmedMessage || state.isWaiting) {
+        return;
+      }
+
+      addMessage('user', trimmedMessage);
+      const loadingId = addMessage('character', '...', { loading: true });
+      state.loadingMessageId = loadingId;
+      setWaiting(true);
+
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            character: state.selectedCharacter,
+            message: trimmedMessage,
+          }),
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Request failed');
+        }
+
+        updateMessage(loadingId, data.reply || '', { loading: false, role: 'character' });
+      } catch (error) {
+        console.error('Chat request failed:', error);
+        updateMessage(loadingId, 'Something went wrong. Try again.', { loading: false, role: 'character' });
+      } finally {
+        state.loadingMessageId = null;
+        setWaiting(false);
+        scrollToBottom();
+      }
+    }
+
+    chatForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const text = messageInput.value;
+      messageInput.value = '';
+      sendMessage(text);
+    });
+
+    messageInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        chatForm.requestSubmit();
+      }
+    });
+
+    renderCharacterCards();
+    renderMessages();
+    messageInput.focus();
+  </script>
+</body>
+</html>
