@@ -1,6 +1,6 @@
 # GitHub Copilot Usage Log
 
-Note: Many of the following prompts were guided by Claude AI.
+Note: Many of the following prompts were created or guided by Claude AI.
 Overall learning: 
 - Github Copilot seems to work best when given a set of clear bullet points dictating what needs to be changed
 - For specific, minor details such as the size of an element in a webpage, it is easier to identify the line copilot changes and enter values manually
